@@ -11,7 +11,7 @@ public class Address implements Comparable<Address> {
 
     public Address(String id, String surname, String firstname, String street, String city,
                    String postcode, String countryISO) {
-        super();
+        //super();
         this.id = id;
         this.surname = surname;
         this.firstname = firstname;

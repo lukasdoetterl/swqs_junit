@@ -19,6 +19,12 @@ import org.junit.jupiter.params.provider.CsvSource;
 
 class CalculatorTests {
 
+	/* setuo
+		execute
+		verify
+		cleanup
+	 */
+
 	@Test
 	@DisplayName("1 + 1 = 2")
 	void addsTwoNumbers() {

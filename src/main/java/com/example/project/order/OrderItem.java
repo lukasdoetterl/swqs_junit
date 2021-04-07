@@ -8,7 +8,7 @@ public class OrderItem {
   private BigDecimal salesPrice;
 
   public OrderItem(int itemId, int quantity, BigDecimal salesPrice) {
-    super();
+    //super();
     this.itemId = itemId;
     this.quantity = quantity;
     this.salesPrice = salesPrice;
@@ -25,6 +25,4 @@ public class OrderItem {
   public BigDecimal getSalesPrice() {
     return salesPrice;
   }
-
-
 }
