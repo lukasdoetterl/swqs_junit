@@ -22,7 +22,7 @@ public class Order {
         return invoiceAdress;
     }
 
-    public void addOrderItem(OrderItem orderItem) { // testing
+    public void addOrderItem(OrderItem orderItem) {
         items.add(orderItem);
         BigDecimal price = orderItem.getSalesPrice().multiply(new BigDecimal(orderItem.getQuantity()));
         totalPrice = totalPrice.add(price);

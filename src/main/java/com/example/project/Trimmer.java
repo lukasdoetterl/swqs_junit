@@ -17,4 +17,5 @@ public class Trimmer {
         }
         return value;
     }
+
 }

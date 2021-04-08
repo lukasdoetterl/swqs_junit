@@ -26,4 +26,5 @@ public class StatefulTrimmer {
             value = value.substring(st, len);
         }
     }
+
 }
