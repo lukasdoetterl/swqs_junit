@@ -14,7 +14,7 @@ public class TrimmerTests {
             String result = trimmer.trim("   Test", ' ');
             //assert
             assertEquals("Test", result);
-            //cleanup
+
         }
 
         //test that it trims a string on the right side
