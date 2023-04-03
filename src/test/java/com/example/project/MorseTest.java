@@ -34,6 +34,16 @@ public class MorseTest {
         //cleanup
     }
 
+    @Test
+    public void toNoParameterMorse() {
+        //init
+        Morse morse = new Morse("We found gold, send more money.");
+        //run + assert
+        Assertions.assertEquals(".-- . ..-. --- ..- -. -.. --. --- .-.. -.. ... . -. -.. -- " +
+                "--- .-. . -- --- -. . -.-- ... - --- .--.", morse.toMorse());
+        //cleanup
+    }
+
 
 
 

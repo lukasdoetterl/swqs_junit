@@ -56,7 +56,7 @@ public class Morse {
         return res.toString();
     }
 
-    public void toMorse() {
+    public String toMorse() {
 
         this.str = replaceDotsWithStop(this.str);
         this.str = cutString(this.str);
@@ -76,7 +76,7 @@ public class Morse {
         }
         this.str = res.toString();
 
-        return;
+        return this.str;
     }
 
 
