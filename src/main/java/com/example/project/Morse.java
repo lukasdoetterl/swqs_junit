@@ -27,6 +27,7 @@ public class Morse {
 
 
 
+
     public static String encodeToMorse(String str) {
 
         str = replaceDotsWithStop(str);

@@ -18,6 +18,7 @@ public class MorseTest {
         Assertions.assertEquals("WE FOUND GOLD SEND MORE MONEY", morse.cutString("We found gold, send more money."));
     }
 
+
     @Test
     public void testEncodeToMorse() {
         Morse morse = new Morse("test");
