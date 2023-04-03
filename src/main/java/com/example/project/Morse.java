@@ -1,7 +1,5 @@
 package com.example.project;
 
-import java.util.Arrays;
-
 public class Morse {
 
     String str;
@@ -28,7 +26,7 @@ public class Morse {
 
 
 
-    public static String encodeToMorse(String str) {
+    public String toMorse(String str) {
 
         str = replaceDotsWithStop(str);
         str = cutString(str);

@@ -14,7 +14,7 @@ public void checkInput() {
     System.out.println("The Input is as follow " + userinput);  // Output user input
 
 
-    String result = morse.encodeToMorse(userinput);
+    String result = morse.toMorse(userinput);
     System.out.println("The Morse code is as follow " + result);  // Output user input
 
 
@@ -25,14 +25,5 @@ public void checkInput() {
             while (true){
                 main.checkInput();
             }
-
-
-
-
-
-
-
-
-
         }
 }
