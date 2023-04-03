@@ -48,16 +48,16 @@ public class TrimmerTests {
             assertEquals("Test", result);
             //cleanup
         }
-    @Test
-    void testExtremeLongTrim() {
-        //init
-        Trimmer trimmer = new Trimmer();
-        //run
-        String result = trimmer.trim("                                                                                                                             Test                                                                         ", ' ');
-        //assert
-        assertEquals("Test", result);
-        //cleanup
-    }
+        @Test
+        void testExtremeLongTrim() {
+            //init
+            Trimmer trimmer = new Trimmer();
+            //run
+            String result = trimmer.trim("                                                                                                                             Test                                                                         ", ' ');
+            //assert
+            assertEquals("Test", result);
+            //cleanup
+        }
 
 
 
