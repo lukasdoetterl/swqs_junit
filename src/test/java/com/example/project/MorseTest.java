@@ -1,35 +1,42 @@
 package com.example.project;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 public class MorseTest {
+    Morse morse;
+    @BeforeEach
+    public void initEach(){
+        morse = new Morse();
+    }
 
     @Test
     public void testReplaceDotsWithStop() {
         //init
-        Morse morse = new Morse("test");
         //run + assert
-        Assertions.assertEquals("We found gold, send more moneySTOP", morse.replaceDotsWithStop("We found gold, send more money."));
+        assertEquals("We found gold, send more moneySTOP", morse.replaceDotsWithStop("We found gold, send more money."));
         //cleanup
     }
 
     @Test
     public void testCutString() {
         //init
-        Morse morse = new Morse("test");
         //run + assert
-        Assertions.assertEquals("WE FOUND GOLD SEND MORE MONEY", morse.cutString("We found gold, send more money."));
+        assertEquals("WE FOUND GOLD SEND MORE MONEY", morse.cutString("We found gold, send more money."));
         //cleanup
     }
 
 
     @Test
     public void toMorse() {
-        //init
-        Morse morse = new Morse("test");
         //run + assert
-        Assertions.assertEquals(".-- . ..-. --- ..- -. -.. --. --- .-.. -.. ... . -. -.. -- " +
+        assertEquals(".-- . ..-. --- ..- -. -.. --. --- .-.. -.. ... . -. -.. -- " +
                 "--- .-. . -- --- -. . -.-- ... - --- .--.", morse.toMorse("We found gold, send more money."));
         //cleanup
     }
@@ -37,12 +44,25 @@ public class MorseTest {
     @Test
     public void toNoParameterMorse() {
         //init
-        Morse morse = new Morse("We found gold, send more money.");
+        Morse morseNoParams = new Morse("We found gold, send more money.");
         //run + assert
-        Assertions.assertEquals(".-- . ..-. --- ..- -. -.. --. --- .-.. -.. ... . -. -.. -- " +
-                "--- .-. . -- --- -. . -.-- ... - --- .--.", morse.toMorse());
+        assertEquals(".-- . ..-. --- ..- -. -.. --. --- .-.. -.. ... . -. -.. -- " +
+                "--- .-. . -- --- -. . -.-- ... - --- .--.", morseNoParams.toMorse());
         //cleanup
     }
+    @ParameterizedTest(name = "{0} => {1}")
+    @CsvSource({
+            "hello??8731249x178983846'*'*'ko   pewfj..., .... . .-.. .-.. --- --... -.... ..--- ----- .---- ...-- ---.. -..- ----- -.... --... ---.. --... ..--- --... ...-- ..... -.- --- .--. . .-- ..-. .--- ... - --- .--. ... - --- .--. ... - --- .--.",
+            "...hello, ... - --- .--. ... - --- .--. ... - --- .--. .... . .-.. .-.. ---",
+            "!!!t, -"
+    })
+    void toMorseParamsTest(String string, String expectedResult) {
+        //run + assert
+        assertEquals(expectedResult, morse.toMorse(string),
+                string + " should be transformed to " + expectedResult);
+        //cleanup
+    }
+
 
 
 

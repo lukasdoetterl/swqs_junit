@@ -16,6 +16,10 @@ public class Morse {
         this.str = str;
     }
 
+    protected Morse(){
+
+    }
+
     protected static String replaceDotsWithStop(String str) {
 
         return str.replace(".", "STOP");
@@ -75,6 +79,8 @@ public class Morse {
 
         return this.str;
     }
+
+
 
 
 }
