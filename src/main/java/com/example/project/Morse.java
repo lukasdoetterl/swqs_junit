@@ -12,16 +12,16 @@ public class Morse {
             "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "1", "2", "3", "4",
             "5", "6", "7", "8", "9", "0"};
 
-    public Morse(String str) {
+    protected Morse(String str) {
         this.str = str;
     }
 
-    public static String replaceDotsWithStop(String str) {
+    protected static String replaceDotsWithStop(String str) {
 
         return str.replace(".", "STOP");
     }
 
-    public static String cutString(String input) {
+    protected static String cutString(String input) {
         StringBuilder tmp = new StringBuilder();
         for (char c : input.toCharArray()) {
             if (Character.isLetterOrDigit(c) || c == ' ') {
@@ -31,10 +31,7 @@ public class Morse {
         return tmp.toString();
     }
 
-
-
-
-    public String toMorse(String str) {
+    protected String toMorse(String str) {
 
         str = replaceDotsWithStop(str);
         str = cutString(str);
@@ -56,7 +53,7 @@ public class Morse {
         return res.toString();
     }
 
-    public String toMorse() {
+    protected String toMorse() {
 
         this.str = replaceDotsWithStop(this.str);
         this.str = cutString(this.str);
