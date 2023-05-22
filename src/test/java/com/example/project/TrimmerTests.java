@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TrimmerTests {
 //test
+    //test2
         @Test
         void testTrimLeft() {
             //init
